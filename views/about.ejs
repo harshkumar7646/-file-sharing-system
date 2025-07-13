@@ -1,0 +1,132 @@
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">About SecureShare</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            A powerful, secure file sharing system built with the MERN stack and advanced AI features.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Key Features</h2>
+            <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-compress-alt text-blue-500 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Automatic File Compression</h3>
+                        <p class="text-gray-600">Large files are automatically compressed before upload to save bandwidth and storage space.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-clock text-yellow-500 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Link Expiry</h3>
+                        <p class="text-gray-600">Set expiration dates for vaults and files to ensure time-limited access and enhanced security.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-download text-red-500 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Download Limits</h3>
+                        <p class="text-gray-600">Control how many times files can be downloaded for enhanced security and usage tracking.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-shield-alt text-green-500 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Secure Storage</h3>
+                        <p class="text-gray-600">Files are stored securely using MongoDB GridFS with encrypted connections and access controls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Technology Stack</h2>
+            <div class="bg-gray-50 rounded-lg p-6">
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Backend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Express.js</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">GridFS</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Frontend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">EJS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Vanilla JS</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Additional Tools</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Multer</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Mongoose</span>
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Moment.js</span>
+                            <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Helmet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Architecture</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-eye text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">View Layer</h3>
+                <p class="text-gray-600">EJS templates with responsive design and interactive JavaScript for the user interface.</p>
+            </div>
+
+            <div class="text-center">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-cogs text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Controller Layer</h3>
+                <p class="text-gray-600">Express.js controllers handling business logic, file operations, and API endpoints.</p>
+            </div>
+
+            <div class="text-center">
+                <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-database text-purple-600 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Model Layer</h3>
+                <p class="text-gray-600">MongoDB with Mongoose schemas for data modeling and GridFS for file storage.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Security & Performance</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mb-8">
+            SecureShare implements multiple layers of security including rate limiting, file validation, 
+            automatic compression, and secure storage with MongoDB Atlas. The system is designed to be 
+            lightweight, cross-platform compatible, and scalable for production use.
+        </p>
+        
+        <div class="flex justify-center space-x-4">
+            <a href="/create" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200">
+                <i class="fas fa-plus mr-2"></i>
+                Get Started
+            </a>
+            <a href="/" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-200">
+                <i class="fas fa-home mr-2"></i>
+                Back to Home
+            </a>
+        </div>
+    </div>
+</div>

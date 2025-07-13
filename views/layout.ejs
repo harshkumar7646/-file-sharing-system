@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title + ' - ' : '' %>SecureShare</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .file-drop-zone {
+            border: 2px dashed #cbd5e0;
+            transition: all 0.3s ease;
+        }
+        .file-drop-zone.drag-over {
+            border-color: #4299e1;
+            background-color: #ebf8ff;
+        }
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-white text-xl font-bold flex items-center">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        SecureShare
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-white hover:text-gray-200 transition duration-200">
+                        <i class="fas fa-home mr-1"></i> Home
+                    </a>
+                    <a href="/create" class="text-white hover:text-gray-200 transition duration-200">
+                        <i class="fas fa-plus mr-1"></i> Create Vault
+                    </a>
+                    <a href="/access" class="text-white hover:text-gray-200 transition duration-200">
+                        <i class="fas fa-key mr-1"></i> Access Vault
+                    </a>
+                    <a href="/about" class="text-white hover:text-gray-200 transition duration-200">
+                        <i class="fas fa-info-circle mr-1"></i> About
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        <%- body %>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">SecureShare</h3>
+                    <p class="text-gray-300">Secure file sharing made simple with advanced features like compression, expiry, and download limits.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Features</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li><i class="fas fa-check mr-2 text-green-400"></i> File Compression</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i> Link Expiry</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i> Download Limits</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i> Secure Storage</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Security</h3>
+                    <p class="text-gray-300">All files are encrypted and stored securely. Links can be configured with expiry dates and download limits for enhanced security.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 SecureShare. Built with security and simplicity in mind.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Global utilities
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
+                type === 'success' ? 'bg-green-500' : 
+                type === 'error' ? 'bg-red-500' : 
+                type === 'warning' ? 'bg-yellow-500' : 'bg-blue-500'
+            } text-white`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Copy to clipboard utility
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showNotification('Copied to clipboard!', 'success');
+            }).catch(() => {
+                showNotification('Failed to copy to clipboard', 'error');
+            });
+        }
+    </script>
+</body>
+</html>

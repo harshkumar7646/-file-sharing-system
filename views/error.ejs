@@ -1,0 +1,33 @@
+<div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-exclamation-triangle text-red-600 text-2xl"></i>
+        </div>
+        
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Oops! Something went wrong</h1>
+        
+        <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+            <p class="text-red-700 font-medium"><%= message %></p>
+        </div>
+
+        <% if (error && error.stack) { %>
+            <details class="text-left mb-6">
+                <summary class="cursor-pointer text-gray-600 hover:text-gray-800 mb-2">
+                    View technical details
+                </summary>
+                <pre class="bg-gray-100 p-4 rounded text-xs text-gray-700 overflow-auto"><%= error.stack %></pre>
+            </details>
+        <% } %>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200">
+                <i class="fas fa-home mr-2"></i>
+                Go Home
+            </a>
+            <button onclick="history.back()" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition duration-200">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Go Back
+            </button>
+        </div>
+    </div>
+</div>
