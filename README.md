@@ -9,8 +9,6 @@ A powerful, secure file sharing system built with the MERN stack  using EJS temp
 - **Multi-File Upload**: Upload multiple files with drag-and-drop interface
 - **Secure Access**: Access vaults using unique Vault IDs
 - **File Management**: Download, delete, and track file usage
-
-### Core Features
 - **Automatic Compression**: Large files are automatically compressed before upload
 - **Link Expiry**: Set expiration dates for vaults and files (hours to days)
 - **Download Limits**: Configure maximum downloads per vault or file
